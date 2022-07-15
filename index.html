@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PigGame</title>
+
+		<link rel="stylesheet" href="/styles/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="overlay"></div>
+		<div class="modal modal_start">
+			<h2>Enter your Nicknames:</h2>
+			<div class="inputs">
+				<input type="text" id="player1_nickname" placeholder="Player1" />
+				<input type="text" id="player2_nickname" placeholder="Player2" />
+			</div>
+			<button id="startGame">Start</button>
+		</div>
+		<div class="modal modal_end hidden">
+			<h2>Winner is <span id="winner"></span>!</h2>
+			<button id="restart_end">Restart</button>
+		</div>
+		<div class="about" id="aboutOpen">?</div>
+		<div class="modal modal_about hidden">
+			<h2>How to play?</h2>
+			<p>Enter your nicknames. First player brgins.</p>
+			<p>
+				Click "ROLL DICE" until you want stop. Every new number adds to
+				previous(Except 1. If ypu get 1, your turn stops and you loose all
+				your turn's progress).
+			</p>
+			<p>When you want stop, click "HOLD RESULT".</p>
+			<p>Main target is to get 100 points. Who did this wins the game!</p>
+			<p style="text-align: center">Good luck</p>
+		</div>
+		<div class="container">
+			<div class="player player--0 active">
+				<h2 class="nickname--0">Player 1</h2>
+				<span class="score" id="score--0">0</span>
+				<div class="current_score">
+					<h3>Current</h3>
+					<span id="current_score--0">0</span>
+				</div>
+				<button class="main_button" id="roll">roll dice</button>
+			</div>
+			<div class="player player--1">
+				<h2 class="nickname--1">Player 2</h2>
+				<span class="score" id="score--1">0</span>
+				<div class="current_score">
+					<h3>Current</h3>
+					<span id="current_score--1">0</span>
+				</div>
+				<button class="main_button" id="hold">hold score</button>
+			</div>
+		</div>
+		<button class="main_button" id="restart">restart</button>
+		<ul id="dice" class="hidden">
+			<li class="dice_part_1 dice_part white"></li>
+			<li class="dice_part_2 dice_part white"></li>
+			<li class="dice_part_3 dice_part white"></li>
+			<li class="dice_part_4 dice_part white"></li>
+			<li class="dice_part_5 dice_part white"></li>
+			<li class="dice_part_6 dice_part white"></li>
+			<li class="dice_part_7 dice_part white"></li>
+		</ul>
+		<script src="scripts/app.js"></script>
+	</body>
+</html>

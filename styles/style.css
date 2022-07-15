@@ -1,0 +1,232 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body {
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(-45deg, #00b09b, #96c93d);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.about {
+	font-size: 4em;
+	width: 80px;
+	height: 80px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	margin: 15px;
+	font-weight: 900;
+	color: #fff;
+	background-color: inherit;
+	border: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container {
+	width: 700px;
+	height: 550px;
+	background-color: aquamarine;
+	display: flex;
+	border-radius: 20px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	z-index: 9;
+	overflow: hidden;
+}
+.player {
+	z-index: 10;
+	width: 50%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.player h2 {
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+	text-transform: uppercase;
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 2em;
+}
+.score {
+	display: block;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5em;
+}
+.current_score {
+	margin-top: 120px;
+	width: 180px;
+	height: 130px;
+	background-color: #11998e;
+	opacity: 0.7;
+	border-radius: 20px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: rgba(255, 255, 255, 0.8);
+	gap: 5px;
+	font-size: 2em;
+}
+.current_score h3 {
+	font-size: 0.8em;
+}
+.main_button {
+	position: relative;
+	margin-top: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #11998e;
+	color: #fff;
+	text-transform: uppercase;
+}
+.main_button#restart {
+	left: 0;
+	transform: none;
+	font-size: 2em;
+	z-index: 20;
+}
+.player--0 {
+	/* background-color: bisque; */
+	border-radius: 20px 0 0 20px;
+}
+.player--1 {
+	border-radius: 0 20px 20px 0;
+}
+.active {
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+#dice {
+	width: 120px;
+	height: 120px;
+	background-color: #fafafa;
+	border-radius: 10%;
+	position: absolute;
+	z-index: 100;
+	top: 50%;
+	transform: translateY(-150%);
+	border: 1px solid #96c93d;
+}
+#dice li {
+	position: absolute;
+	list-style-type: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #96c93d;
+	position: relative;
+}
+.dice_part_1 {
+	transform: translateX(20px) translateY(15px);
+}
+.dice_part_2 {
+	transform: translateX(80px) translateY(-5px);
+}
+.dice_part_3 {
+	transform: translateX(20px) translateY(10px);
+}
+.dice_part_4 {
+	transform: translateX(80px) translateY(-10px);
+}
+.dice_part_5 {
+	transform: translateX(20px) translateY(5px);
+}
+.dice_part_6 {
+	transform: translateX(80px) translateY(-15px);
+}
+.dice_part_7 {
+	transform: translateX(50px) translateY(-70px);
+}
+
+/* ---------- Modal classes ---------- */
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(1px);
+	z-index: 998;
+}
+.modal {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	min-width: 40%;
+	background-color: #00b09b;
+	z-index: 999;
+	padding: 40px;
+	border-radius: 10px;
+	color: #fff;
+}
+.modal h2 {
+	text-transform: uppercase;
+	text-align: center;
+}
+.modal .inputs {
+	display: flex;
+	justify-content: center;
+}
+.modal .inputs input {
+	height: 3em;
+	border-radius: 1.5em;
+	border: none;
+	margin: 10px;
+	padding: 10px;
+}
+.modal button {
+	padding: auto;
+	height: 3.5em;
+	width: 100px;
+	border-radius: 1.75em;
+	border: none;
+	text-transform: uppercase;
+	color: #96c93d;
+	font-weight: 900;
+	transition: 0.5s;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 10px;
+	font-size: 1em;
+}
+.modal button:hover {
+	background-color: #96c93d;
+	color: #fff;
+}
+#winner {
+	font-weight: 900;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Technical classes ---------- */
+.white {
+	background-color: #fafafa !important;
+}
+.hidden {
+	display: none;
+}
